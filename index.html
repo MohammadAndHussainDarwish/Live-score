@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101813">
+    <title>مواعيد الملاعب | جدول المباريات</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="مواعيد الملاعب - الرئيسية">
+          <span class="brand-mark" aria-hidden="true">م</span>
+          <span>مواعيد <strong>الملاعب</strong></span>
+        </a>
+        <span class="data-source"><span class="source-dot"></span> بيانات المباريات</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">كل المباريات في مكان واحد</p>
+        <h1 id="page-title">جدول <span>المباريات</span></h1>
+        <p class="intro-copy">تابع مواعيد مباريات اليوم ونتائجها، واختر التاريخ والبطولة التي تهمك.</p>
+      </section>
+
+      <section class="toolbar" aria-label="خيارات عرض المباريات">
+        <div class="date-control">
+          <button class="icon-button" id="previous-day" type="button" aria-label="اليوم السابق">
+            <span aria-hidden="true">›</span>
+          </button>
+          <label class="date-picker">
+            <span class="control-caption">التاريخ</span>
+            <input id="match-date" type="date" aria-label="اختر تاريخ المباريات">
+          </label>
+          <button class="icon-button" id="next-day" type="button" aria-label="اليوم التالي">
+            <span aria-hidden="true">‹</span>
+          </button>
+        </div>
+
+        <label class="league-control">
+          <span class="control-caption">البطولة</span>
+          <select id="competition-filter" aria-label="تصفية حسب البطولة">
+            <option value="all">كل البطولات</option>
+          </select>
+        </label>
+
+        <button class="refresh-button" id="refresh-matches" type="button">
+          <span aria-hidden="true">↻</span>
+          تحديث المباريات
+        </button>
+      </section>
+
+      <section class="match-section" aria-labelledby="matches-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="selected-day-label">مباريات اليوم</p>
+            <h2 id="matches-heading">جدول اللقاءات</h2>
+          </div>
+          <span class="match-count" id="match-count" aria-live="polite">— مباراة</span>
+        </div>
+
+        <div class="notice" id="notice" role="status" hidden></div>
+        <div class="match-list" id="match-list" aria-live="polite" aria-busy="false"></div>
+      </section>
+
+      <footer class="footer">
+        <span>تُعرض أوقات المباريات حسب توقيت جهازك.</span>
+        <span>المصدر: worldcup26.ir</span>
+      </footer>
+    </main>
+  </body>
+</html>
